@@ -43,12 +43,12 @@
       <p class="lede">It's night two. The puppy is screaming in the crate, your neighbors are awake, and you're Googling "is crate training cruel" at 2am. <strong>It's not cruel, and night two is the worst night.</strong> What you need isn't reassurance — it's a plan with exact timings. Here it is: 14 days, day by day.</p>
 
       <h2>Why crate training works (and when it doesn't)</h2>
-      <p>Dogs are den animals. A properly introduced crate taps into that instinct: a small, enclosed space where they sleep and feel safe. It also does three practical things for you: it accelerates potty training (dogs avoid soiling their sleeping area), it keeps a chewing puppy from destroying your home or eating something dangerous, and it gives the dog a place that is <em>theirs</em> when the house gets chaotic.</p>
+      <p>Dogs are den animals. A properly introduced crate taps into that instinct: a small, enclosed space where they sleep and feel safe. It also does three practical things for you: it <a href="how-to-potty-train-a-puppy.html">accelerates potty training</a> (dogs avoid soiling their sleeping area), it keeps a chewing puppy from destroying your home or eating something dangerous, and it gives the dog a place that is <em>theirs</em> when the house gets chaotic.</p>
       <p>When doesn't it work? When the crate is used as punishment, when the puppy is left in it far longer than their bladder allows, or when it's introduced too fast — day one, door slammed, lights out. That creates a dog that panics at the sight of the crate, and it's the most common way first-time owners break crate training. This 14-day plan exists specifically to avoid that.</p>
 
       <h2>Before day 1: picking the right crate and where to put it</h2>
-      <p>You need exactly one crate to start, and it should be sized for the dog's <strong>adult</strong> size with a <strong>divider panel</strong> — not sized for the puppy. A crate that's the right size for an 8-week-old is useless by week 12. The divider lets you shrink the living space as the puppy grows. The golden rule: enough room to stand up, turn around, and lie down — plus 2 to 4 inches. Any bigger and the puppy will designate one end as a bathroom.</p>
-      <p>For most first-time owners, a <strong>wire crate with a divider</strong> is the right call: good airflow, you can see in, and the puppy can see out (less isolation panic). Put the crate in your bedroom for the first two weeks — proximity at night dramatically reduces crying, and you'll hear a genuine potty whimper before it becomes a full accident.</p>
+      <p>You need exactly one crate to start, and it should be sized for the dog's <strong>adult</strong> size with a <strong>divider panel</strong> — not sized for the puppy. A crate that's the right size for an 8-week-old is useless by week 12. The divider lets you shrink the living space as the puppy grows (see our <a href="what-size-crate-for-my-puppy.html">breed-by-breed crate sizing chart</a> for your breed's adult dimensions). The golden rule: enough room to stand up, turn around, and lie down — plus 2 to 4 inches. Any bigger and the puppy will designate one end as a bathroom.</p>
+      <p>For most first-time owners, a <strong>wire crate with a divider</strong> is the right call: good airflow, you can see in, and the puppy can see out (less isolation panic). A crate cover helps with nighttime crying — our <a href="new-dog-essentials-checklist.html">new dog essentials checklist</a> covers which crate add-ons are worth buying and which to skip. Put the crate in your bedroom for the first two weeks — proximity at night dramatically reduces crying, and you'll hear a genuine potty whimper before it becomes a full accident.</p>
 
       <!-- AFFILIATE: Amazon Associates — link specific crate picks by size category in the "picking the right crate" section; crate covers and divider-compatible models convert well. -->
 
@@ -141,6 +141,13 @@
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Collapse the mobile menu after following a nav link
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     })();
   </script>
