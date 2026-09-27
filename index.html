@@ -10,6 +10,10 @@
   <meta property="og:type" content="website">
   <!-- MEDIVAVINE/JOURNEY: paste ad network script here -->
   <link rel="stylesheet" href="styles.css">
+  <script>
+  /* Apply stored/preferred color theme before first paint (no-JS-safe). */
+  (function(){try{var t=localStorage.getItem('f90d-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -143,22 +147,6 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var toggle = document.querySelector('.nav-toggle');
-      var nav = document.getElementById('mainNav');
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      // Collapse the mobile menu after following a nav link
-      nav.addEventListener('click', function (e) {
-        if (e.target.closest('a') && nav.classList.contains('open')) {
-          nav.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    })();
-  </script>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
