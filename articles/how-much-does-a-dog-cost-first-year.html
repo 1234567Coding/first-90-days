@@ -119,12 +119,12 @@
         <li><strong>Pet deposit + pet rent</strong> ($200&ndash;$500 deposit, $25&ndash;$75/month rent) — renting with a dog has a price tag most leases bury in the fine print.</li>
         <li><strong>Replacing chewed stuff</strong> ($100&ndash;$300) — shoes, cables, furniture corners, at least one thing you actually cared about.</li>
         <li><strong>Boarding or pet-sitting</strong> ($40&ndash;$75/night) — your first trip without the dog will cost more than the trip.</li>
-        <li><strong>The second crate</strong> ($60&ndash;$120) — for the car, or the upstairs, or because the first one was the wrong size.</li>
+        <li><strong>The second crate</strong> ($60&ndash;$120) — for the car, or the upstairs, or because the first one was the wrong size. (Our <a href="what-size-crate-for-my-puppy.html">breed-by-breed crate sizing chart</a> helps you get it right the first time.)</li>
         <li><strong>Increased food costs as they grow</strong> — a large-breed puppy eats 3&ndash;4 cups a day by month 6, roughly double the month-2 amount.</li>
         <li><strong>Training you didn't plan on</strong> ($150&ndash;$400) — the "we'll DIY it" plan meets a reactive adolescent at month 5.</li>
         <li><strong>Grooming tools or appointments</strong> — nail trims alone run $15&ndash;$25 a visit if you don't learn to do them.</li>
         <li><strong>Dog walker / daycare gap</strong> ($20&ndash;$40/day) — the logistics of a full workday with a young puppy.</li>
-        <li><strong>The "oops" restock</strong> — the enzyme cleaner, the better harness, the crate that actually fits. Budget $100 for getting it wrong the first time.</li>
+        <li><strong>The "oops" restock</strong> — the enzyme cleaner, the better harness, the crate that actually fits. Budget $100 for getting it wrong the first time. Our <a href="new-dog-essentials-checklist.html">new dog essentials checklist</a> keeps the oops list as short as possible.</li>
       </ol>
 
       <h2>Where you can save without hurting the dog</h2>
@@ -197,6 +197,13 @@
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Collapse the mobile menu after following a nav link
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     })();
   </script>
