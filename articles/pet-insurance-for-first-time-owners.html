@@ -70,7 +70,7 @@
           <tr><td>Your total out of pocket</td><td>$2,400 &minus; $1,520</td><td><strong>$880</strong></td></tr>
         </tbody>
       </table>
-      <p>So the $2,400 emergency costs you $880 plus the premiums you've paid so far (say 6 months &times; $45 = $270), for a true first-incident cost of about <strong>$1,150</strong> vs. $2,400 uninsured. That's the value proposition in one paragraph: insurance doesn't make vet care cheap, it makes it <em>predictable</em>.</p>
+      <p>So the $2,400 emergency costs you $880 plus the premiums you've paid so far (say 6 months &times; $45 = $270), for a true first-incident cost of about <strong>$1,150</strong> vs. $2,400 uninsured. That's the value proposition in one paragraph: insurance doesn't make vet care cheap, it makes it <em>predictable</em>. For how insurance fits alongside food, vet visits, and everything else in a full-year budget, see our <a href="how-much-does-a-dog-cost-first-year.html">real first-year cost breakdown</a>.</p>
 
       <h2>Accident-only vs. accident-and-illness: who each fits</h2>
       <ul>
@@ -114,7 +114,7 @@
         <dd>The day your policy takes effect (usually the day you enroll, sometimes the next day). Typical: 2&ndash;3 days for accidents, 14 days for illness, and sometimes 6&ndash;12 months for orthopedic conditions like cruciate tears. Anything that happens during the waiting period isn't covered — and can become a pre-existing condition.</dd>
       </dl>
 
-      <p><em>This article is general information about how pet insurance works, not financial advice or a recommendation for any specific company. Policies vary — read the actual terms, and talk to your vet about your dog's breed-specific health risks before deciding.</em></p>
+      <p><em>This article is general information about how pet insurance works, not financial advice or a recommendation for any specific company. Policies vary — read the actual terms, and talk to your vet about your dog's breed-specific health risks before deciding. Our <a href="first-time-dog-owners-90-day-playbook.html">90-day playbook</a> covers what to expect (and ask) at that first vet visit within 72 hours.</em></p>
 
       <section class="keep-reading" aria-label="Keep reading">
         <h2>Keep reading</h2>
@@ -155,6 +155,13 @@
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Collapse the mobile menu after following a nav link
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     })();
   </script>
