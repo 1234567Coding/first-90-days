@@ -349,6 +349,214 @@ a:focus-visible, button:focus-visible {
 .disclosure h1 { font-size: clamp(1.8rem, 4.5vw, 2.4rem); letter-spacing: -0.02em; margin: 0 0 1rem; }
 .disclosure h2 { font-size: 1.3rem; margin: 2rem 0 0.75rem; }
 
+/* ---------- Feature additions: search, TOC, progress, tables, FAQ, dark mode ---------- */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  overflow: hidden; white-space: nowrap;
+}
+
+/* --- Dark theme --- */
+[data-theme="dark"] {
+  --accent: #e0913f;
+  --accent-dark: #f0ac63;
+  --accent-soft: #2c2114;
+  --ink: #ece7db;
+  --ink-soft: #b6ad9c;
+  --line: #3d362b;
+  --paper: #1e1a15;
+  --wash: #26211a;
+}
+[data-theme="dark"] img { opacity: 0.92; }
+
+/* --- Header controls: search box + theme toggle --- */
+.main-nav { display: flex; align-items: center; gap: 1.25rem; }
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink);
+  flex: none;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+.site-search { position: relative; flex: none; }
+.site-search-input {
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--wash);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  width: 11rem;
+  transition: width 0.2s ease, border-color 0.2s ease;
+}
+.site-search-input:focus { width: 15rem; border-color: var(--accent); outline: none; }
+.site-search-results {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: min(22rem, 80vw);
+  max-height: 24rem;
+  overflow-y: auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(35,33,29,0.16);
+  z-index: 100;
+  padding: 0.4rem;
+}
+.site-search-item {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+.site-search-item:hover, .site-search-item.active { background: var(--accent-soft); }
+.site-search-item .site-search-title { display: block; font-weight: 700; font-size: 0.95rem; color: var(--ink); }
+.site-search-item .site-search-excerpt { display: block; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.15rem; }
+.site-search-empty { margin: 0; padding: 0.75rem; font-size: 0.9rem; color: var(--ink-soft); }
+
+/* --- Table of contents --- */
+.toc {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--wash);
+  padding: 1.1rem 1.35rem;
+  margin: 0 0 2rem;
+}
+.toc-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.toc ol { margin: 0; padding: 0; list-style: none; }
+.toc li { margin: 0.15rem 0; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  padding: 0.2rem 0 0.2rem 0.75rem;
+  border-left: 2px solid var(--line);
+}
+.toc a:hover { color: var(--accent); }
+.toc a.active { color: var(--accent-dark); font-weight: 700; border-left-color: var(--accent); }
+.toc .toc-h3 a { padding-left: 1.5rem; font-size: 0.88rem; }
+
+/* Keep anchored headings visible below the sticky header */
+.post h2[id], .post h3[id] { scroll-margin-top: 90px; }
+
+/* --- Reading progress bar --- */
+.reading-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 200;
+}
+
+/* --- Sortable tables --- */
+.post table.is-sortable th { padding: 0; }
+.sort-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.sort-btn:hover { color: var(--accent-dark); }
+.sort-ind::after { content: "\21C5"; color: var(--ink-soft); font-weight: 400; }
+th[aria-sort="ascending"] .sort-ind::after { content: "\25B2"; color: var(--accent-dark); }
+th[aria-sort="descending"] .sort-ind::after { content: "\25BC"; color: var(--accent-dark); }
+
+/* --- FAQ accordions (progressive enhancement: plain dl without JS) --- */
+.faq-accordion dt { margin: 0; }
+.faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.85rem 0;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  font: inherit;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.faq-toggle::after {
+  content: "+";
+  flex: none;
+  width: 1.6rem; height: 1.6rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.faq-toggle[aria-expanded="true"]::after { content: "\2212"; }
+.faq-toggle:hover { color: var(--accent-dark); }
+.faq-accordion dd { margin: 0; padding: 0.75rem 0 1.1rem; color: var(--ink-soft); }
+.faq-accordion dd[hidden] { display: none; }
+
+/* --- Back to top --- */
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.9rem; height: 2.9rem;
+  border-radius: 50%;
+  border: 1px solid var(--accent-dark);
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(35,33,29,0.25);
+  z-index: 150;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.back-to-top[hidden] { display: none; }
+.back-to-top:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+@media (max-width: 720px) {
+  .main-nav { display: none; width: 100%; }
+  .main-nav.open { display: block; }
+  .site-search { margin: 0.5rem 0 0.25rem; }
+  .site-search-input, .site-search-input:focus { width: 100%; }
+  .site-search-results { left: 0; right: auto; width: 100%; }
+  .theme-toggle { margin-left: auto; }
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {
