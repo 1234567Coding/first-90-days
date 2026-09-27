@@ -60,43 +60,43 @@
       <div class="wrap-wide">
         <h2 class="section-title">All guides</h2>
         <div class="card-grid">
-          <a class="article-card" href="articles/how-to-potty-train-a-puppy.html">
+          <a class="article-card p-training" href="articles/how-to-potty-train-a-puppy.html">
             <span class="pillar">Training</span>
             <h3>How to Potty Train a Puppy: An Hour-by-Hour Schedule for Weeks 8–12</h3>
             <p>The bladder-math rule, the 7 potty triggers, a full sample day, and the no-drama accident protocol.</p>
             <span class="go">Read &rarr;</span>
           </a>
-          <a class="article-card" href="articles/first-time-dog-owners-90-day-playbook.html">
+          <a class="article-card p-training" href="articles/first-time-dog-owners-90-day-playbook.html">
             <span class="pillar">Training</span>
             <h3>The First-Time Dog Owner's 90-Day Playbook</h3>
             <p>The complete week-by-week plan for training, gear, vet care, and budget — our flagship guide.</p>
             <span class="go">Read &rarr;</span>
           </a>
-          <a class="article-card" href="articles/crate-training-puppy-14-day-method.html">
+          <a class="article-card p-training" href="articles/crate-training-puppy-14-day-method.html">
             <span class="pillar">Training</span>
             <h3>Crate Training a Puppy: The 14-Day Method That Actually Works</h3>
             <p>A day-by-day plan for crate training, the 2am crying protocol, and the three mistakes that ruin it.</p>
             <span class="go">Read &rarr;</span>
           </a>
-          <a class="article-card" href="articles/what-size-crate-for-my-puppy.html">
+          <a class="article-card p-gear" href="articles/what-size-crate-for-my-puppy.html">
             <span class="pillar">Gear</span>
             <h3>What Size Crate for My Puppy? A Breed-by-Breed Sizing Chart</h3>
             <p>The most-Googled crate question, answered with a 40+ breed chart and the divider-panel trick.</p>
             <span class="go">Read &rarr;</span>
           </a>
-          <a class="article-card" href="articles/new-dog-essentials-checklist.html">
+          <a class="article-card p-gear" href="articles/new-dog-essentials-checklist.html">
             <span class="pillar">Gear</span>
             <h3>The New Dog Essentials Checklist: Exactly What to Buy Before Day One</h3>
             <p>12 must-haves, 6 nice-to-haves, and 5 things to skip — so you don't overspend in week one.</p>
             <span class="go">Read &rarr;</span>
           </a>
-          <a class="article-card" href="articles/how-much-does-a-dog-cost-first-year.html">
+          <a class="article-card p-money" href="articles/how-much-does-a-dog-cost-first-year.html">
             <span class="pillar">Money</span>
             <h3>How Much Does a Dog Cost in the First Year? A Real Breakdown</h3>
             <p>Three worked example budgets, the month-by-month spending curve, and the $1,000 emergency fund rule.</p>
             <span class="go">Read &rarr;</span>
           </a>
-          <a class="article-card" href="articles/pet-insurance-for-first-time-owners.html">
+          <a class="article-card p-health" href="articles/pet-insurance-for-first-time-owners.html">
             <span class="pillar">Vet &amp; Health</span>
             <h3>Pet Insurance for First-Time Owners: How It Works and Whether You Need It</h3>
             <p>Deductibles, waiting periods, and pre-existing conditions explained — with a real claim worked line by line.</p>
@@ -150,6 +150,13 @@
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Collapse the mobile menu after following a nav link
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     })();
   </script>
