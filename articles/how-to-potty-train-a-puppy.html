@@ -176,6 +176,13 @@
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
+      // Collapse the mobile menu after following a nav link
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     })();
   </script>
 </body>
