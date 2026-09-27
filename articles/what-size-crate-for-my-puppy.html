@@ -40,7 +40,7 @@
         <p class="affiliate-note">This article contains affiliate links. If you buy through them, we may earn a commission at no extra cost to you. Read our <a href="../disclosure.html">full disclosure</a>.</p>
       </div>
 
-      <p class="lede">Buy the crate too small and your puppy can't stand up. Buy it too big and they'll designate one end as a bathroom. <strong>Here's the chart that settles it</strong> — 40+ popular breeds with recommended crate dimensions, plus the divider-panel trick that means you only ever buy one crate.</p>
+      <p class="lede">Buy the crate too small and your puppy can't stand up. Buy it too big and they'll designate one end as a bathroom. <strong>Here's the chart that settles it</strong> — 40+ popular breeds with recommended crate dimensions, plus the divider-panel trick that means you only ever buy one crate. (And once the right crate arrives, follow our <a href="crate-training-puppy-14-day-method.html">14-day crate training plan</a> — sizing and training are one project.)</p>
 
       <h2>The golden rule: stand, turn, lie down — plus 2&ndash;4 inches</h2>
       <p>The right crate lets your dog stand up without crouching, turn around comfortably, and lie down stretched out — with 2 to 4 inches of clearance beyond that. That's it. That's the whole rule, and it applies whether you have a Chihuahua or a Great Dane.</p>
@@ -116,7 +116,7 @@
         <li><strong>Plastic kennels</strong> — best for travel (most are airline-approved) and for anxious dogs that prefer a darker den. Downsides: no divider option, harder to clean thoroughly, and poor visibility makes training check-ins harder.</li>
         <li><strong>Soft-sided crates</strong> — lightweight and portable, great as a <em>second</em> crate for travel or the car once the dog is already crate-trained. Not for puppies or chewers — one determined night and there's a hole in the mesh.</li>
       </ul>
-      <p>Our recommendation for first-time owners: <strong>one wire crate with a divider for home</strong>. Add a soft-sided one later for travel if you need it.</p>
+      <p>Our recommendation for first-time owners: <strong>one wire crate with a divider for home</strong>. Add a soft-sided one later for travel if you need it. For the rest of the day-one shopping list — crate mats, covers, and everything else — see our <a href="new-dog-essentials-checklist.html">new dog essentials checklist</a>.</p>
 
       <h2>When to size up: signs the crate is too small</h2>
       <ul>
@@ -129,7 +129,7 @@
       <h2>FAQ</h2>
       <dl class="faq">
         <dt>Can the crate be too big?</dt>
-        <dd>Yes — for a puppy in training. Excess space breaks the don't-soil-the-den instinct, and puppies will use the far corner as a bathroom. The fix isn't a smaller crate; it's a divider panel in a correctly-sized adult crate. For an already house-trained adult dog, a roomy crate is perfectly fine.</dd>
+        <dd>Yes — for a puppy in training. Excess space breaks the don't-soil-the-den instinct, and puppies will use the far corner as a bathroom. The fix isn't a smaller crate; it's a divider panel in a correctly-sized adult crate. For an already house-trained adult dog, a roomy crate is perfectly fine. Getting the size right is also one of the biggest levers in potty training — see our <a href="how-to-potty-train-a-puppy.html">hour-by-hour potty training schedule</a>.</dd>
         <dt>One crate or two (bedroom + living room)?</dt>
         <dd>Start with one. Hauling one wire crate between rooms for two weeks is mildly annoying; buying two crates before you know your dog's habits is expensive. The exception: a two-story house where carrying a 42-inch crate up and down stairs daily will make you hate crate training. In that case, a second basic crate upstairs is worth it.</dd>
       </dl>
@@ -173,6 +173,13 @@
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Collapse the mobile menu after following a nav link
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     })();
   </script>
