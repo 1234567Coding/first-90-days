@@ -34,6 +34,13 @@ img { max-width: 100%; height: auto; }
 a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 a:hover { color: var(--accent-dark); }
 
+/* Visible keyboard focus for all interactive elements */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* ---------- Layout ---------- */
 
 .wrap {
@@ -187,6 +194,7 @@ a:hover { color: var(--accent-dark); }
 
 .article-card {
   border: 1px solid var(--line);
+  border-top: 4px solid var(--line);
   border-radius: var(--radius);
   padding: 1.4rem;
   display: flex;
@@ -196,6 +204,16 @@ a:hover { color: var(--accent-dark); }
   color: inherit;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+/* Pillar-colored top accent so each topic is scannable at a glance */
+.article-card.p-training { border-top-color: var(--accent); }
+.article-card.p-gear { border-top-color: #5f6f3e; }
+.article-card.p-money { border-top-color: #8a6d1f; }
+.article-card.p-health { border-top-color: #8c4a5a; }
+.article-card .pillar { opacity: 0.9; }
+.article-card.p-training .pillar { color: var(--accent); }
+.article-card.p-gear .pillar { color: #5f6f3e; }
+.article-card.p-money .pillar { color: #8a6d1f; }
+.article-card.p-health .pillar { color: #8c4a5a; }
 .article-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(35,33,29,0.08); color: inherit; }
 .article-card .pillar {
   font-size: 0.72rem;
@@ -320,7 +338,7 @@ a:hover { color: var(--accent-dark); }
 .faq dd { margin: 0 0 1rem; color: var(--ink-soft); }
 
 .keep-reading { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--line); }
-.keep-reading h2 { margin-top: 0; }
+.keep-reading h2 { margin-top: 0; border-top: none; padding-top: 0; }
 .keep-reading ul { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
 .keep-reading li a { font-weight: 600; text-decoration: none; }
 .keep-reading li a:hover { text-decoration: underline; }
