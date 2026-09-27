@@ -101,12 +101,12 @@
           <tr><td><strong>Total</strong></td><td><strong>~$268</strong></td></tr>
         </tbody>
       </table>
-      <p>Large breeds run $50&ndash;$80 more (bigger crate, bigger everything). Small breeds run a little less. Either way: under $300 covers everything the dog actually needs on day one.</p>
+      <p>Large breeds run $50&ndash;$80 more (bigger crate, bigger everything). Small breeds run a little less. Either way: under $300 covers everything the dog actually needs on day one. To see how this starter cart fits into the full year — food, vet, insurance, and the costs nobody warns you about — see our <a href="how-much-does-a-dog-cost-first-year.html">real first-year cost breakdown</a>.</p>
 
       <h2>FAQ</h2>
       <dl class="faq">
         <dt>What's the one thing people forget?</dt>
-        <dd>The enzyme cleaner, by a mile. Everyone buys the cute stuff — collar, toys, bed — and nobody buys the $14 bottle that determines whether potty training takes four weeks or four months. Buy it before day one.</dd>
+        <dd>The enzyme cleaner, by a mile. Everyone buys the cute stuff — collar, toys, bed — and nobody buys the $14 bottle that determines whether potty training takes four weeks or four months. Buy it before day one, then follow our <a href="how-to-potty-train-a-puppy.html">hour-by-hour potty training schedule</a> so the cleaner gets as little work as possible.</dd>
         <dt>Can I buy secondhand?</dt>
         <dd>Yes for hard goods: crates, baby gates, and playpens are perfect secondhand buys — sanitize with a pet-safe disinfectant and save 40&ndash;60%. Say no to secondhand chews, bedding, and food (hygiene and safety), and inspect any used crate for bent wires or broken latches.</dd>
       </dl>
@@ -150,6 +150,13 @@
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Collapse the mobile menu after following a nav link
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     })();
   </script>
