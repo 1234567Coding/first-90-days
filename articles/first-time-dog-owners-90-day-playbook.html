@@ -64,15 +64,15 @@
 
       <h3>Your only training goals: name, crate, and potty</h3>
       <p>Forget "sit" for now. In the first two weeks, your dog needs to learn three things: their name means good things, the crate is safe, and outside is where the bathroom is.</p>
-      <p><strong>The potty schedule (this is the whole game):</strong> Take the dog out every 2 hours during the day, plus immediately after waking up, after eating, after drinking, and after playing. For an 8-week-old puppy, that's roughly 10&ndash;12 trips a day. Yes, really. Set a timer. Puppies physically cannot hold it long &mdash; the rule of thumb is one hour per month of age, so an 8-week-old gets about 2 hours.</p>
-      <p><strong>Crate introduction:</strong> Feed every meal in the crate with the door open. Toss treats in randomly during the day. First closed-door sessions should be 5 minutes while you're in the room, building up gradually. A crying puppy at night is normal for the first 3&ndash;5 nights &mdash; make sure they've pottied, then keep nighttime interactions boring and dark.</p>
+      <p><strong>The potty schedule (this is the whole game):</strong> Take the dog out every 2 hours during the day, plus immediately after waking up, after eating, after drinking, and after playing. For an 8-week-old puppy, that's roughly 10&ndash;12 trips a day. Yes, really. Set a timer. Puppies physically cannot hold it long &mdash; the rule of thumb is one hour per month of age, so an 8-week-old gets about 2 hours. For the complete hour-by-hour version, follow our <a href="how-to-potty-train-a-puppy.html">potty training schedule for weeks 8&ndash;12</a>.</p>
+      <p><strong>Crate introduction:</strong> Feed every meal in the crate with the door open. Toss treats in randomly during the day. First closed-door sessions should be 5 minutes while you're in the room, building up gradually. A crying puppy at night is normal for the first 3&ndash;5 nights &mdash; make sure they've pottied, then keep nighttime interactions boring and dark. For exact day-by-day timings, use our <a href="crate-training-puppy-14-day-method.html">14-day crate training method</a>.</p>
 
       <!-- AFFILIATE: Crate sizing guide + specific crate recommendations — Amazon Associates. Link to "What Size Crate for My Puppy?" article. -->
 
       <h3>Gear you need before (or on) day one</h3>
-      <p>Buy these before the dog arrives. Everything else can wait:</p>
+      <p>Buy these before the dog arrives. Everything else can wait (the full list, with what to look for in each item, is in our <a href="new-dog-essentials-checklist.html">new dog essentials checklist</a>):</p>
       <ul>
-        <li><strong>Crate</strong> sized for the dog's <em>adult</em> weight, with a divider panel for puppies</li>
+        <li><strong>Crate</strong> sized for the dog's <em>adult</em> weight, with a divider panel for puppies (see our <a href="what-size-crate-for-my-puppy.html">breed-by-breed crate sizing chart</a>)</li>
         <li><strong>6-foot leash</strong> (not retractable) and a properly fitted collar or harness</li>
         <li><strong>Food and water bowls</strong> &mdash; stainless steel, skip the cute ceramic for now</li>
         <li><strong>The same food the dog is currently eating</strong> (breeder/shelter food), enough for 2 weeks &mdash; switch foods gradually later to avoid stomach upset</li>
@@ -88,7 +88,7 @@
       <p>Even if the breeder or shelter says the dog "just saw a vet," book your own visit within the first 3 days. The first appointment covers: a full physical exam, weight check, fecal test for parasites, vaccine review (bring any records you were given), and a microchip check. Ask about the vaccine schedule going forward, flea/tick/heartworm prevention for your area, and what number to call after hours.</p>
 
       <h3>Budget: expect the biggest hit now</h3>
-      <p>Month one is the most expensive month of dog ownership. Between the adoption fee or breeder cost, the gear haul, the first vet visit, and pet insurance signup, most first-time owners spend <strong>$800&ndash;$2,000 in the first 30 days</strong> before food is even a factor. That's normal. It drops sharply after.</p>
+      <p>Month one is the most expensive month of dog ownership. Between the adoption fee or breeder cost, the gear haul, the first vet visit, and pet insurance signup, most first-time owners spend <strong>$800&ndash;$2,000 in the first 30 days</strong> before food is even a factor. That's normal. It drops sharply after. For the full picture, see our <a href="how-much-does-a-dog-cost-first-year.html">real first-year cost breakdown</a> with three worked example budgets.</p>
 
       <!-- AFFILIATE: Pet insurance comparison — readers shopping in week 1 are the highest-intent insurance buyers. Link to "Pet Insurance for First-Time Owners" via ShareASale/CJ/Impact programs. -->
 
@@ -197,7 +197,7 @@
         <dd>Puppy kindergarten-style classes are typically open once vaccines are underway (often around 10&ndash;12 weeks &mdash; confirm with your vet). The value isn't the commands; it's supervised socialization with other puppies. For adult rescues, a basic manners class in month 2 is ideal.</dd>
 
         <dt>Should I get pet insurance?</dt>
-        <dd>If a surprise $2,000 vet bill would wreck your finances, yes &mdash; and sign up in the first weeks, because pre-existing conditions generally aren't covered and waiting periods apply. Compare accident-only vs. accident-and-illness plans, deductibles, and reimbursement rates &mdash; not just the monthly premium.</dd>
+        <dd>If a surprise $2,000 vet bill would wreck your finances, yes &mdash; and sign up in the first weeks, because pre-existing conditions generally aren't covered and waiting periods apply. Compare accident-only vs. accident-and-illness plans, deductibles, and reimbursement rates &mdash; not just the monthly premium. Our <a href="pet-insurance-for-first-time-owners.html">pet insurance explainer</a> walks through a real claim line by line.</dd>
 
         <dt>Can I leave my puppy alone while I work?</dt>
         <dd>An 8-week-old puppy maxes out around 2 hours; build up gradually to 4 hours by 4&ndash;6 months. For full workdays before that, you'll need a midday dog walker, daycare a few days a week, or a work-from-home arrangement. This is the logistics problem most new owners underestimate &mdash; solve it before day one.</dd>
@@ -246,6 +246,13 @@
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Collapse the mobile menu after following a nav link
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
       });
     })();
   </script>
